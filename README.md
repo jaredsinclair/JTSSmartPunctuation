@@ -30,9 +30,9 @@ Your application will need an object that sets itself as the delegate for the te
 Then implement the following delegate method:
 
 ```objc
-- (void)textStorage:(NSTextStorage *)textStorage
- willProcessEditing:(NSTextStorageEditActions)editedMask
-              range:(NSRange)editedRange
+- (void)textStorage:(NSTextStorage *)textStorage 
+ willProcessEditing:(NSTextStorageEditActions)editedMask 
+              range:(NSRange)editedRange 
      changeInLength:(NSInteger)delta {
     
     [JTSSmartPunctuation fixDumbPunctuation:textStorage
