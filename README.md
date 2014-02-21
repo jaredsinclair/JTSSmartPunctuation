@@ -5,7 +5,7 @@ A drop-in utility for adding as-you-type smart punctuation to a UITextView. For 
 
 ## Smart What?
 
-JTSSmartPunctuation replaces common shorthands composed of dumb punctuation with their smart counterparts. It turns dumb quotes into **smart quotes**, three consecutive periods into an **elipsis**, three consecutive dashes into an **em-dash**, and two consecutive dashes followed by anything but a dash with an **en-dash**. It’s compatible with **right-to-left languages**, and safe to use with composed character sequences, like **emoji**.
+JTSSmartPunctuation replaces common shorthands composed of dumb punctuation with their smart counterparts. It turns dumb quotes into **smart quotes**, three consecutive periods into an **elipsis**, three consecutive dashes into an **em-dash**, and two consecutive dashes followed by anything but a dash with an **en-dash**. It’s compatible with **right-to-left languages**, and safe to use with composed character sequences, like **emoji**. It only scans the immediate vicinity around recent edits, so it should perform well even with very long runs of text.
 
 
 ## Usage
