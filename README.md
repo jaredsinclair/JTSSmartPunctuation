@@ -12,7 +12,7 @@ JTSSmartPunctuation replaces common shorthands composed of dumb punctuation with
 
 On iOS 7 or later, a text input view like `UITextView` uses an instance of `NSTextStorage` as its backing store for the text. This text storage object takes an optional delegate that conforms to the `NSTextStorageDelegate` protocol. This protocol includes the following method:
 
-```
+```objc
 - (void)textStorage:(NSTextStorage *)textStorage 
  willProcessEditing:(NSTextStorageEditActions)editedMask 
               range:(NSRange)editedRange 
@@ -23,13 +23,13 @@ This method is called *after* the user has performed a new edit to the text, but
 
 Your application will need an object that sets itself as the delegate for the text storage of your text view:
 
-```
+```objc
 [self.textView.textStorage setDelegate:self];
 ```
 
 Then implement the following delegate method:
 
-```
+```objc
 - (void)textStorage:(NSTextStorage *)textStorage
  willProcessEditing:(NSTextStorageEditActions)editedMask
               range:(NSRange)editedRange
