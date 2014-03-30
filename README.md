@@ -41,4 +41,24 @@ Then implement the following delegate method:
 }
 ```
 
-That's it.
+That's the basics. A more nuanced implementation also corrects the cursor position in situations where the replacement text has changed the total length:
+
+```objc
+- (void)textStorage:(NSTextStorage *)textStorage 
+ willProcessEditing:(NSTextStorageEditActions)editedMask 
+              range:(NSRange)editedRange 
+     changeInLength:(NSInteger)delta {
+    
+    NSInteger lengthChange;
+    
+    lengthChange = [JTSSmartPunctuation fixDumbPunctuation:textStorage
+                                               editedRange:editedRange
+                                           textInputObject:self.textView];
+                            
+    if (lengthChange != 0) {
+        NSRange selectedRange = [self.textView selectedRange];
+        selectedRange.location += lengthChange;
+        [self.textView setSelectedRange:selectedRange];
+    }
+}
+```
