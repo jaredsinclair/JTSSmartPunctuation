@@ -56,7 +56,7 @@ typedef NS_ENUM(NSInteger, JTSQuoteDirection) {
 @implementation JTSSmartPunctuationComposedCharacterItem
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%lu, %lu string: %@", self.range.location, self.range.length, self.string];
+    return [NSString stringWithFormat:@"%lu, %lu string: %@", (unsigned long)self.range.location, (unsigned long)self.range.length, self.string];
 }
 
 @end
